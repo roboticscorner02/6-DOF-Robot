@@ -1,0 +1,25 @@
+<launch>
+
+    <!-- Launch the Gazebo simulation of the robot arm -->
+    <arg name="model" default="$(find robot1_description)/urdf/robot1.urdf"/>
+  
+    <include file="$(find robot1_description)/launch/gazebo.launch">
+      <arg name="model" value="$(arg model)" />
+    </include>
+  
+    <!-- Launch the controllers -->
+    <include file="$(find robot1_controller)/launch/controller.launch">
+      <arg name="is_sim" value="true"/>
+    </include>
+  
+    <!-- Launch moveit move_group -->
+    <include file="$(find robot1_moveit)/launch/move_group.launch"/>
+  
+    <!-- Launch moveit rviz gui -->
+    <include file="$(find robot1_moveit)/launch/moveit_rviz.launch">
+      <arg name="rviz_config" value="$(find robot1_moveit)/launch/moveit.rviz"/>
+    </include>
+  
+
+  
+  </launch>

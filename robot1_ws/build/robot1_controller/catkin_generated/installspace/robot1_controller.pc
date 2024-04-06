@@ -1,0 +1,8 @@
+prefix=/home/ahmedmady/robot1_ws/install
+
+Name: robot1_controller
+Description: Description of robot1_controller
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: controller_manager hardware_interface

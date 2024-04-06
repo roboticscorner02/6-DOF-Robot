@@ -1,0 +1,8 @@
+prefix=/home/ahmedmady/robot1_ws/devel
+
+Name: robot1_remote
+Description: Description of robot1_remote
+Version: 0.0.0
+Cflags: -I/home/ahmedmady/robot1_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

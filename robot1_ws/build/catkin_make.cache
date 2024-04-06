@@ -1,0 +1,2 @@
+robot1_bringup:robot1_chat:robot1_controller:robot1_description:robot1_moveit:robot1_remote
+-DCATKIN_DEVEL_PREFIX=/home/ahmedmady/robot1_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ahmedmady/robot1_ws/install -G Unix Makefiles

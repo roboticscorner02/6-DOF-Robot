@@ -1,0 +1,15 @@
+# Request
+float64 base
+float64 holder1
+float64 bracket1
+float64 holder2
+float64 bracket2
+float64 gripper
+---
+# Response
+float64 base
+float64 holder1
+float64 bracket1
+float64 holder2
+float64 bracket2
+float64 gripper

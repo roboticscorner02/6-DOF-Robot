@@ -1,0 +1,352 @@
+<robot name="robot1">
+
+  <!-- Links-->
+
+  <link name="world" />
+
+  <link name="base_link">
+    <inertial>
+      <mass value="2" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/base_cylinder.stl"
+          scale="0.0001 0.0001 0.0001" />
+      </geometry>
+      <origin xyz="0 0 0.01" />
+      <material name="black">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/base_cylinder.stl"
+          scale="0.0001 0.0001 0.0001" />
+      </geometry>
+      <origin xyz="0 0 0.01" />
+    </collision>
+  </link>
+
+  <link name="platform">
+    <inertial>
+      <mass value="2" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/top_plate.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" />
+      <material name="black" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/top_plate.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="lower_arm">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/lower_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" />
+      <material name="black" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/lower_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="top_arm">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/top_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 1.59 0" xyz="0 0 0" />
+      <material name="black" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/top_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 1.59 0" xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="wrist">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/wrist.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <material name="black" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/wrist.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="clawbase">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawbase.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 3.18 0" xyz="0 0 0" />
+      <material name="white">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawbase.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 3.18 0" xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="clawr">
+    <inertial>
+      <mass value="0.05" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawr.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <material name="white" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawr.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="clawl">
+    <inertial>
+      <mass value="0.05" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawl.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot1_description/mesh/clawl.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0.5" xyz="0.001 0 0" />
+    </collision>
+  </link>
+
+  <!-- Joints-->
+
+  <joint name="virtual_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="joint1" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0" upper="3.14" velocity="1.0" />
+    <parent link="base_link" />
+    <child link="platform" />
+    <origin rpy="0 0 1.5" xyz="0 0 0.48" />
+  </joint>
+
+  <joint name="joint2" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="0.872" upper="3.14" velocity="1.0" />
+    <parent link="platform" />
+    <child link="lower_arm" />
+    <origin xyz="0 0.19 0.28" />
+  </joint>
+
+  <joint name="joint3" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="0.523" upper="2.268" velocity="1.0" />
+    <parent link="lower_arm" />
+    <child link="top_arm" />
+    <origin xyz="-0.25 1.0 0" />
+  </joint>
+
+  <joint name="joint4" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="-1.7" upper="1.7" velocity="1.0" />
+    <parent link="top_arm" />
+    <child link="wrist" />
+    <origin xyz="0.11 1.25 0" />
+  </joint>
+
+  <joint name="joint5" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="1.57" upper="4.71" velocity="1.0" />
+    <parent link="wrist" />
+    <child link="clawbase" />
+    <origin xyz="0 0.63 0" />
+  </joint>
+
+  <joint name="joint6" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-0.5" upper="0" velocity="1.0" />
+    <parent link="clawbase" />
+    <child link="clawr" />
+    <origin rpy="0 0 -0.31" xyz="0.11 0.34 0" />
+  </joint>
+
+  <joint name="joint7" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0" upper="-0.5" velocity="1.0" />
+    <parent link="clawbase" />
+    <child link="clawl" />
+    <origin rpy="0 0 0.22" xyz="-0.16 0.30 0" />
+    <mimic joint="joint6" multiplier="-1" offset="0" />
+  </joint>
+
+  <!-- Transmissions-->
+
+  <transmission name="transmission1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- gazebo ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot1</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+
+    <plugin name="joint_7_mimic_joint_6"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>joint_6</joint>
+      <mimicJoint>joint_7</mimicJoint>
+      <multiplier>-1.0</multiplier>
+      <offset>0</offset>
+      <maxEffort>30</maxEffort>
+      <robotNamespace>/robot1</robotNamespace>
+    </plugin>
+  </gazebo>
+
+</robot>
